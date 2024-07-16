@@ -41,6 +41,10 @@ const ChatMessages = ({ chatMessages }: ChatMessagesProps) => {
       latestMessageRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   }, [messages.length]);
+
+  useEffect(() => {
+    console.log('Messages updated:', messages);  // Add this line
+  }, [messages]);
   return (
     <>
       <div className="w-full h-full mx-auto max-w-3xl flex flex-col gap-2 px-2 my-1">

@@ -2,6 +2,7 @@ import { useChatContext } from '@/context/ChatContext';
 import { getAiRes, getChatTitle } from '@/lib/actions/chat.actions';
 import { useUser } from '@clerk/nextjs';
 import axios from 'axios';
+import Image from 'next/image';
 import { useRouter } from 'next/navigation';
 import React from 'react'
 
@@ -57,7 +58,7 @@ const Card = ({desc, icon, color}: {desc: string, icon: string, color: string}) 
   return (
     <div className={`dark:text-[#f5f5f5] h-30 w-40 relative p-2 rounded-[10px] dark:bg-[#202020] dark:hover:bg-[#101415] hover:bg-[#FEF5EA] hover:cursor-pointer`} style={{ borderColor: color, borderWidth: 1 }} onClick={() => handleClick(desc)}>
         <p>{desc}</p>
-        <img src={icon} alt="" className='absolute bottom-1 right-1 p-0.5 w-[24px] h-[24px] rounded-full border border-[#ebdad1] bg-[#f4f4f4] break-words' />
+        <Image src={icon} alt="icon" className='absolute bottom-1 right-1 p-0.5 rounded-full border border-[#ebdad1] bg-[#f4f4f4] break-words' width={24} height={24} />
     </div>
   )
 }

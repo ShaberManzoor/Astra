@@ -13,15 +13,20 @@ import { useSidebarContext } from '@/context/SidebarContext';
 
 const Sidebar = () => {
   const router = useRouter();
-  const {state: chatState, dispatch} = useChatContext();
+  const {state: chatState, dispatch, setMessages} = useChatContext();
   const {isSidebarVisible, setIsSidebarVisible} = useSidebarContext();
   const {id} = useParams();
   
   const handleDelete = async (chat_id: string) => {
+    console.log(chat_id);
+    console.log(id);
+    
     try {
       await axios.delete(`/api/chat/delete`, { params: { chat_id } });
       dispatch({ type: 'REMOVE_CHAT', payload: chat_id });
       if(chat_id===id){
+        setMessages([]);
+        console.log('Going home');
         router.push('/');
       }
     } catch (error) {
