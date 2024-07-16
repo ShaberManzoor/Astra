@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect } from 'react';
 import axios from 'axios';
 import ChatMessages from '@/components/ChatMessages';
 import InputField from '@/components/InputField';
@@ -25,7 +25,7 @@ export default function ChatPage({ params }: { params: { id: string } }) {
     if(chat?.userId !==  user?.id){
       router.push('/');
     }
-  }, []);
+  }, [chat, user]);
 
   useEffect(() => {
     const fetchUserChats = async () => {
@@ -78,7 +78,6 @@ export default function ChatPage({ params }: { params: { id: string } }) {
     <section className="w-full h-full flex flex-col justify-center overflow-hidden">
       <div className="flex-1 overflow-y-auto w-full">
         {chat && <ChatMessages chatMessages={messages} />}
-      
       </div>
       <InputField onsubmit={handleFormSubmit} />
     </section>

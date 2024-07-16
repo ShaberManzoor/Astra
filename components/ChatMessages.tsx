@@ -47,7 +47,7 @@ const ChatMessages = ({ chatMessages }: ChatMessagesProps) => {
   }, [messages]);
   return (
     <>
-      <div className="w-full h-full mx-auto max-w-3xl flex flex-col gap-2 px-2 my-1">
+      <div className="w-full mx-auto max-w-3xl flex flex-col gap-2 px-2 my-1">
         {chatMessages.map((message, index) => {
           const messageBlocks = extractCodeFromString(message.content);
           return message.role === 'user' ? (
@@ -57,12 +57,12 @@ const ChatMessages = ({ chatMessages }: ChatMessagesProps) => {
               </div>
             </div>
           ) : (
-            <div key={index} className="flex w-full px-2 justify-start">
-              <div className="max-w-3xl prose dark:prose-invert text-black dark:text-[#f5f5f5] p-2">
+            <div key={index} className="flex w-full px-2 justify-start mx-auto">
+              <div className="max-w-3xl prose dark:prose-invert text-black dark:text-[#f5f5f5] px-2">
                 {messageBlocks.map((block, ind) =>
                   isCodeBlock(block) ? (
                     <div className="w-full overflow-x-auto px-2" key={ind}>
-                      <SyntaxHighlighter language="javascript">
+                      <SyntaxHighlighter style={dracula} language="javascript">
                         {block.replace(/```/g, '')}
                       </SyntaxHighlighter>
                     </div>
