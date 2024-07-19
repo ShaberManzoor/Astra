@@ -1,6 +1,6 @@
 # Astra - Chatbot Website
 
-[astra](https://github.com/user-attachments/assets/957764cf-79bb-4096-af23-dd372a1033d5)
+![astra](https://github.com/user-attachments/assets/957764cf-79bb-4096-af23-dd372a1033d5)
 
 
 ## Overview
