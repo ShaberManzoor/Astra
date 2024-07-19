@@ -1,6 +1,6 @@
 # Astra - Chatbot Website
 
-![Astra Logo]![astra](https://github.com/user-attachments/assets/957764cf-79bb-4096-af23-dd372a1033d5)
+[astra](https://github.com/user-attachments/assets/957764cf-79bb-4096-af23-dd372a1033d5)
 
 
 ## Overview
@@ -9,7 +9,8 @@ Astra is a sophisticated chatbot website designed to provide an engaging user ex
 
 ## Features
 
-![Chat Interface]
+![image](https://github.com/user-attachments/assets/9c6d95e3-6ccf-403b-9745-614743579355)
+
 
 - **Attractive UI**: Leveraged the Gemini API to create an appealing and user-friendly interface.
 - **User Authentication**: Implemented secure user authentication using Clerk.
