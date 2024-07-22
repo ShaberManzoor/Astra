@@ -76,7 +76,7 @@ const InputField = ({ onsubmit }: InputFieldProps) => {
           value={input + interimTranscript}
           onChange={(e) => setInput(e.target.value)}
           maxRows={7}
-          placeholder="Message MernGPT"
+          placeholder="Message Astra"
           className="resize-none w-full outline-none text-black dark:text-white placeholder:text-gray-500 bg-transparent pl-4 scrollbar-track-thin dark:scrollbar-thumb-gray-500 scrollbar-thumb-yellow-500"
         />
         <div className='flex gap-1'>

@@ -28,6 +28,7 @@ const Card = ({desc, icon, color}: {desc: string, icon: string, color: string}) 
       title[0].toUpperCase();
       
       const newAiMessage: Message = { role: "assistant", content: aiRes };
+      dispatch({type: 'SET_LOADING', payload: false})
       setMessages(prevMessages => [...prevMessages, newAiMessage]);
 
      if (user) {
@@ -47,7 +48,6 @@ const Card = ({desc, icon, color}: {desc: string, icon: string, color: string}) 
         
           // Redirect to the chat page
         dispatch({type: 'ADD_CHAT', payload: newChat});
-        dispatch({type: 'SET_LOADING', payload: false})
         router.push(`/chat/${chatId}`)
        } 
        } catch (error: any) {
